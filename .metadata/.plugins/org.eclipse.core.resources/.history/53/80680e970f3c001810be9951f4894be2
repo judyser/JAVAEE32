@@ -1,0 +1,26 @@
+package cn.e3mall.controller;
+/**
+ * 商品管理Controller
+ * @author xjw1
+ *
+ */
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import cn.e3mall.pojo.TbItem;
+import cn.e3mall.service.ItemService;
+
+public class ItemController {
+	@Autowired 
+	private ItemService itemService;
+	
+	@RequestMapping("/item/{itemId}")
+	@RequestBody
+	public TbItem geTbItemById(@PathVariable long itemId) {
+		TbItem itemByID = itemService.getItemByID(itemId);
+		return  tbItem;
+	}
+}
